@@ -1,21 +1,31 @@
-﻿namespace ConsoleApp;
-
-internal class Program
+﻿namespace ConsoleApp
 {
-    public delegate void MyDelegate(string msg);
-    static void Main(string[] args)
+    internal class Program
     {
-        MyDelegate del = MethodA;
+        public delegate void MyDelegate(string msg);
+        public static void Func(string msg) => Console.WriteLine(msg);
 
-        MyDelegate del2 = (string msg) => Console.WriteLine(msg);
+        static void Main(string[] args)
+        {
+            MyDelegate del = MethodA;
+            MyDelegate del2 = (string msg) => Console.WriteLine(msg);
+            MyDelegate del3 = new MyDelegate(MethodA);
 
-        MyDelegate del3 = new MyDelegate(MethodA);
+            del("HI");
 
-        del(msg: "HI");
-    }
+            Func<int, int, int> add = Sum;
+            int result = add(10, 10);
+            Console.WriteLine(result);
+        }
 
-    static void MethodA(string message)
-    {
-        Console.WriteLine(message);
+        static void MethodA(string message)
+        {
+            Console.WriteLine(message);
+        }
+
+        static int Sum(int x, int y)
+        {
+            return x + y;
+        }
     }
 }
