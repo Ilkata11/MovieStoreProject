@@ -6,4 +6,8 @@ Predicate...
 Action....
 Thread....
 
-Start/StopWatch
+Start/StopWatch >>>>> GetDate...() Methods
+
+
+Static int Count
+
