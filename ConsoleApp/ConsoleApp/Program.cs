@@ -12,6 +12,11 @@
 
             del("HI");
 
+            // Action<int, int, int> action;
+            Predicate<string, string> isUpper = IsUpperCase;
+            bool result = isUpper("Hello World");
+            if (true) return;
+
             Func<int, int, int> add = Sum;
             int result = add(10, 10);
             Console.WriteLine(result);
@@ -27,4 +32,10 @@
             return x + y;
         }
     }
-}
+
+    static bool IsUpperCase(string str)
+    {
+        if (string.IsNullOrEmpty()str) return false;
+
+        return str.Equals(str.ToUpper());
+    }
