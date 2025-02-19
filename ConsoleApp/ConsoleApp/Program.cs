@@ -3,7 +3,6 @@
     internal class Program
     {
         public delegate void MyDelegate(string msg);
-        public static void Func(string msg) => Console.WriteLine(msg);
 
         static void Main(string[] args)
         {
